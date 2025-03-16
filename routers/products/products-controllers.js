@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken";
 
 configDotenv();
 
-const cache = new Valkey();
+const cache = Valkey(6379, "valkey", {});
 export const GetAllProducts = async (req, res) => {
     try {
         let products = await cache.get("products");
