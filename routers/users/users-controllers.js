@@ -7,7 +7,7 @@ import Valkey from "iovalkey"
 
 configDotenv();
 
-const cache = new Valkey();
+const cache = new Valkey(6379, "valkey", {});
 
 export const GetAllUsers = async (req, res) => {
 
